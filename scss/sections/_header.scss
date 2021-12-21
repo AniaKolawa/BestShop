@@ -1,0 +1,133 @@
+
+.header {
+
+  position: relative;
+
+  &__shadow {
+    box-shadow: 0px 3px 6px #00000029;
+    z-index: 2;
+    width: 100vw;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1354px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+  &__logoContainer {
+    padding: 0 25px;
+
+  }
+  &__logo {
+    font-family: $font-secondary;
+    font-size: 3.2rem;
+    line-height: 3.7rem;
+    color: $main-color;
+    font-weight: 300;
+    letter-spacing: 0px;
+
+  }
+  &__navContainer {
+    @media (min-width: 800px) {
+      margin: 0 25px;
+    }
+
+  }
+  &__nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: absolute;
+    top: 80px;
+    left: 0;
+
+    @media (min-width: 800px){
+      height: 70px;
+      max-height: unset;
+      display: flex;
+      position: unset;
+    }
+
+  }
+  &__navElement {
+    line-height: 30px;
+    @media (min-width: 800px) {
+      height: inherit;
+      display: flex;
+      align-items: center;
+      border-bottom: 4px solid white;
+    }
+    &:hover {
+      @media (min-width: 800px) {
+        border-bottom: 4px solid $main-color;
+      }
+    }
+
+  }
+  &__navLink {
+    color: #A5A5A5;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    padding: 25px;
+
+
+    &:hover {
+      color: black;
+      @media (min-width: 800px) {
+        color: #A5A5A5;
+
+      }
+    }
+  }
+  .nav__checkbox {
+    display: none;
+    position: absolute;
+    opacity: 0;
+
+
+    &:checked ~ .header__nav {
+      max-height: 175px;
+      background-color: white;
+      padding-top: 25px;
+      height: 175px;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      box-shadow: 0px 3px 6px #00000029;
+      z-index: 1;
+
+      @media (min-width: 800px){
+        height: 70px;
+        max-height: unset;
+        display: flex;
+        position: unset;
+        padding-top: 0;
+        box-shadow: unset;
+        transition: unset;
+      }
+    }
+  }
+
+  .nav__button {
+    padding: 0 25px;
+    .fa-bars {
+      color: $main-color;
+      font-size: 1.6rem;
+    }
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+}

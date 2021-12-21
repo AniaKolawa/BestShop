@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $font-main;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+}

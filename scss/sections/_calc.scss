@@ -1,0 +1,227 @@
+//@mixin notebook {
+//  @media (max-width: 1352px) {
+//    @content;
+//  }
+//}
+//
+//@mixin tablet {
+//  @media (max-width: 1024px) {
+//    @content;
+//  }
+//}
+//
+//@mixin mobile {
+//  @media (max-width: 792px) {
+//    @content;
+//  }
+//}
+
+
+.calc {
+  padding: 80px 0;
+  background-color: $background-color;
+
+  @media (max-width: 1024px) {
+    padding: 30px 15px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 3.6rem;
+    font-family: $font-secondary;
+    line-height: 4.2rem;
+  }
+
+  &__columns {
+    max-width: 865px;
+    margin: 50px auto 0;
+    display: flex;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+
+  &__form {
+    width: 50%;
+    margin-right: 20px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+
+  &__input input,
+  &__select .select__input {
+    color: #a5a5a5;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid $main-color;
+    padding: 11px 20px;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+    box-shadow: 0px 3px 6px rgba(7, 172, 230, .16);
+    margin-bottom: 20px;
+    background-color: white;
+  }
+
+  &__input {
+
+    input {
+      &::placeholder {
+        color: #a5a5a5;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        font-family: $font-main;
+      }
+    }
+  }
+
+  &__select {
+    position: relative;
+
+    .select__input {
+      position: relative;
+      height: 40px;
+      vertical-align: middle;
+      padding: 13px 20px;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        background-image: url("../assets/images/Arrow.svg");
+        width: 22px;
+        height: 22px;
+        display: block;
+        position: absolute;
+        right: 14px;
+        top: 9px;
+      }
+    }
+
+    .select__dropdown {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background-color: white;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid $accent-color2;
+      overflow: hidden;
+
+      li {
+        font-size: 13px;
+        padding: 10px 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $background-color;
+        }
+      }
+    }
+
+
+    &.open {
+      .select__input::after {
+        transform: rotate(180deg);
+      }
+
+      .select__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  .form__checkbox {
+    display: flex;
+    margin-bottom: 10px;
+    .consent__text {
+      padding-top: 4px;
+      color: #707070;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+  }
+
+  &__summary {
+    width: 50%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 30px;
+    }
+
+    .summary__total,
+    .list__item {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+      border-radius: 6px;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-size: 0.875rem;
+      display: none;
+
+      &.open {
+        display: flex;
+      }
+    }
+
+    .summary__total {
+      width: 50%;
+      align-self: flex-end;
+      margin-top: 22px;
+      padding: 8px 20px;
+      background-color: $main-color;
+      font-size: 1.4rem;
+
+      .total__price {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+
+    .list__item {
+      padding: 6px 20px;
+      background-color: $accent-color1;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+
+
+      .item {
+        &__price {
+          font-weight: 700;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+.calc__checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.calc__checkboxSpan {
+  border: 1px solid #95989A;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  display: flex;
+  background-color: white;
+}
+.calc__checkboxInput:checked + .calc__checkboxSpan {
+  background-image: url("../assets/images/Checkmark-1.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,99 @@
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    text-align: center;
+    padding: 20px 30px;
+  }
+
+  &__articles {
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 1124px;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    @media (min-width: 768px){
+      max-width: 33.3%;
+      justify-content: flex-start;
+
+    }
+  }
+
+  &__img {
+    position: absolute;
+    &--1 {
+      left: 40px;
+      top: 15px;
+    }
+    &--2 {
+      left: 30px;
+      top: 21px;
+    }
+    &--3 {
+      left: 36px;
+      top: 15px;
+    }
+  }
+
+  &__icon {
+    padding: 8px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      position: relative;
+      display: block;
+    }
+
+    &--1::before {
+       background-color: $accent-color2;
+     }
+    &--2::before {
+      background-color: $main-color;
+    }
+    &--3::before {
+      background-color: $accent-color1;
+    }
+  }
+
+  &__subtitle {
+    padding: 8px;
+    font-family: $font-secondary;
+    font-weight: 800;
+    letter-spacing: 6px;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: center;
+  }
+
+  &__text {
+    padding: 8px 0px;
+    font-family: $font-secondary;
+    font-weight: 400;
+    color: #A5A5A5;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    text-align: center;
+    @media (min-width: 768px) {
+
+    }
+  }
+}
